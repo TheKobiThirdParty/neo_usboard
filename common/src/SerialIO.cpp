@@ -37,7 +37,7 @@
  *********************************************************************/
 
 //#include "stdafx.h"
-#include <../include/SerialIO.h>
+#include <neo_usboard/SerialIO.h>
 #include <math.h>
 #include <string.h>
 #include <iostream>
@@ -207,7 +207,7 @@ int SerialIO::openIO()
 
 	// set baud rate
 	int iNewBaudrate = int(m_BaudRate * m_Multiplier + 0.5);
-	std::cerr << "Setting Baudrate to " << iNewBaudrate;
+	// std::cerr << "Setting Baudrate to " << iNewBaudrate;
 
 	int iBaudrateCode = 0;
 	bool bBaudrateValid = getBaudrateCode(iNewBaudrate, &iBaudrateCode);

@@ -36,7 +36,7 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************/
 
-#include <../include/neo_usboard_node.h>
+#include <neo_usboard/neo_usboard_node.h>
 
 //#######################
 //#### main programm ####

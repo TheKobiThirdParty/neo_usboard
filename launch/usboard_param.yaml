@@ -11,23 +11,23 @@
 ##########################
 ComPort: /dev/ttyUSB0
 usboard_timeout_: 0.5
-requestRate: 5
+requestRate: 15
 log: false
 
 ##########################
 #        sensors         #
 ##########################
-sensor1_active: true
-sensor2_active: true
-sensor3_active: true
-sensor4_active: true
-sensor5_active: true
-sensor6_active: true
+sensor1_active: false
+sensor2_active: false
+sensor3_active: false
+sensor4_active: false
+sensor5_active: false
+sensor6_active: false
 sensor7_active: false
 sensor8_active: false
-sensor9_active: false
+sensor9_active: true
 sensor10_active: false
-sensor11_active: false
+sensor11_active: true
 sensor12_active: false
 sensor13_active: false
 sensor14_active: false

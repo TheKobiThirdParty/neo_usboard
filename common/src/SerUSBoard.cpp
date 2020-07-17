@@ -39,7 +39,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "../include/SerUSBoard.h"
+#include <neo_usboard/SerUSBoard.h>
 
 
 //-----------------------------------------------
@@ -64,10 +64,16 @@
 /*************************************************
  * Constructor
  ************************************************/
-SerUSBoard::SerUSBoard()
+SerUSBoard::SerUSBoard() : m_bLogging(false)
 {
     m_iNumBytesSend = NUM_BYTE_SEND_USBOARD_08;
     m_bComInit = false;
+    for(int i = 0; i < 4; ++i) {
+        m_iSensorData1To4[i];
+        m_iSensorData5To8[i];
+        m_iSensorData9To12[i];
+        m_iSensorData13To16[i];
+    }
 }
 
 /*************************************************
@@ -93,6 +99,7 @@ bool SerUSBoard::init(const char* sNumComPort)
     if(iRet == 0)
     {
         m_bComInit = true;
+        m_SerIO.purge();
         return m_bComInit;
     }
     else
@@ -125,6 +132,10 @@ int SerUSBoard::eval_RXBuffer()
 
     //enough data in queue?
     iNrBytesInQueue = m_SerIO.getSizeRXQueue();
+    if(iNrBytesInQueue > RS232_RX_BUFFERSIZE) {
+        m_SerIO.purge();
+        return NO_MESSAGES;
+    }
     if(iNrBytesInQueue < c_iNrBytesMin)
     {
         siNoMsgCnt++;
@@ -157,7 +168,7 @@ int SerUSBoard::eval_RXBuffer()
     for(i = (iNrBytesRead - c_iNrBytesMin); i >= 0 ; i--)
     {
         //try to find start bytes
-        if((cDat[i] == cTest) && (cDat[i+1]==m_iCmdUSBoard))
+        if((cDat[i] == cTest) && (cDat[i+1] <= CMD_GET_ANALOGIN))
         {
             iDataStart = i + 1;
 
@@ -473,7 +484,6 @@ void SerUSBoard::convDataToSendMsg(unsigned char cMsg[])
 }
 
 //-----------------------------------------------
-
 bool SerUSBoard::convRecMsgToData(unsigned char cMsg[])
 {
     unsigned int iNumByteRec = NUM_BYTE_REC;
@@ -491,6 +501,8 @@ bool SerUSBoard::convRecMsgToData(unsigned char cMsg[])
 
     if(iCheckSum != iTxCheckSum)
     {
+        // If all measurements are 2.55 or 0, the neo usboard sends a checksum of 0.
+        if(iTxCheckSum == 0) return true;
         return false;
     }
 

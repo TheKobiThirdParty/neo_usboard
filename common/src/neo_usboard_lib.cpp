@@ -37,7 +37,7 @@
  *********************************************************************/
 
 #include <ros/ros.h>
-#include <../include/neo_usboard_node.h>
+#include <neo_usboard/neo_usboard_node.h>
 
 
 
@@ -338,7 +338,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange1Msg;
             //create USRanger1Msg
             //fill in header
-            USRange1Header.seq = 1; 				//uint32
+            // USRange1Header.seq = 1; 				//uint32
             USRange1Header.stamp = ros::Time::now(); 		//time
             USRange1Header.frame_id = "usrangesensor1";		//string
 
@@ -346,7 +346,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange1Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange1Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange1Msg.min_range = 0.1; 				//float32 [m]
-            USRange1Msg.max_range = 1.2; 				//float32 [m]
+            USRange1Msg.max_range = 2.5; 				//float32 [m]
             USRange1Msg.range = ((float)usBoard.sensor[0]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -360,7 +360,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange2Msg;
             //create USRanger2Msg
             //fill in header
-            USRange2Header.seq = 1; 				//uint32
+            // USRange2Header.seq = 1; 				//uint32
             USRange2Header.stamp = ros::Time::now(); 		//time
             USRange2Header.frame_id = "usrangesensor2";		//string
 
@@ -368,7 +368,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange2Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange2Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange2Msg.min_range = 0.1; 				//float32 [m]
-            USRange2Msg.max_range = 1.2; 				//float32 [m]
+            USRange2Msg.max_range = 2.5; 				//float32 [m]
             USRange2Msg.range = ((float)usBoard.sensor[1]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -383,7 +383,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange3Msg;
             //create USRanger3Msg
             //fill in header
-            USRange3Header.seq = 1; 				//uint32
+            // USRange3Header.seq = 1; 				//uint32
             USRange3Header.stamp = ros::Time::now(); 		//time
             USRange3Header.frame_id = "usrangesensor3";		//string
 
@@ -391,7 +391,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange3Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange3Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange3Msg.min_range = 0.1; 				//float32 [m]
-            USRange3Msg.max_range = 1.2; 				//float32 [m]
+            USRange3Msg.max_range = 2.5; 				//float32 [m]
             USRange3Msg.range = ((float)usBoard.sensor[2]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -405,7 +405,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange4Msg;
             //create USRanger4Msg
             //fill in header
-            USRange4Header.seq = 1; 				//uint32
+            // USRange4Header.seq = 1; 				//uint32
             USRange4Header.stamp = ros::Time::now(); 		//time
             USRange4Header.frame_id = "usrangesensor4";		//string
 
@@ -413,7 +413,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange4Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange4Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange4Msg.min_range = 0.1; 				//float32 [m]
-            USRange4Msg.max_range = 1.2; 				//float32 [m]
+            USRange4Msg.max_range = 2.5; 				//float32 [m]
             USRange4Msg.range = ((float)usBoard.sensor[3]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -427,7 +427,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange5Msg;
             //create USRanger5Msg
             //fill in header
-            USRange5Header.seq = 1; 				//uint32
+            // USRange5Header.seq = 1; 				//uint32
             USRange5Header.stamp = ros::Time::now(); 		//time
             USRange5Header.frame_id = "usrangesensor5";		//string
 
@@ -435,7 +435,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange5Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange5Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange5Msg.min_range = 0.1; 				//float32 [m]
-            USRange5Msg.max_range = 1.2; 				//float32 [m]
+            USRange5Msg.max_range = 2.5; 				//float32 [m]
             USRange5Msg.range = ((float)usBoard.sensor[4]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -450,7 +450,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange6Msg;
             //create USRanger6Msg
             //fill in header
-            USRange6Header.seq = 1; 				//uint32
+            // USRange6Header.seq = 1; 				//uint32
             USRange6Header.stamp = ros::Time::now(); 		//time
             USRange6Header.frame_id = "usrangesensor6";		//string
 
@@ -458,7 +458,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange6Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange6Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange6Msg.min_range = 0.1; 				//float32 [m]
-            USRange6Msg.max_range = 1.2; 				//float32 [m]
+            USRange6Msg.max_range = 2.5; 				//float32 [m]
             USRange6Msg.range = ((float)usBoard.sensor[5]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -473,7 +473,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange7Msg;
             //create USRanger7Msg
             //fill in header
-            USRange7Header.seq = 1; 				//uint32
+            // USRange7Header.seq = 1; 				//uint32
             USRange7Header.stamp = ros::Time::now(); 		//time
             USRange7Header.frame_id = "usrangesensor7";		//string
 
@@ -481,7 +481,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange7Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange7Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange7Msg.min_range = 0.1; 				//float32 [m]
-            USRange7Msg.max_range = 1.2; 				//float32 [m]
+            USRange7Msg.max_range = 2.5; 				//float32 [m]
             USRange7Msg.range = ((float)usBoard.sensor[6]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -496,7 +496,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange8Msg;
             //create USRanger8Msg
             //fill in header
-            USRange8Header.seq = 1; 				//uint32
+            // USRange8Header.seq = 1; 				//uint32
             USRange8Header.stamp = ros::Time::now(); 		//time
             USRange8Header.frame_id = "usrangesensor8";		//string
 
@@ -504,7 +504,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange8Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange8Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange8Msg.min_range = 0.1; 				//float32 [m]
-            USRange8Msg.max_range = 1.2; 				//float32 [m]
+            USRange8Msg.max_range = 2.5; 				//float32 [m]
             USRange8Msg.range = ((float)usBoard.sensor[7]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -519,7 +519,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange9Msg;
             //create USRanger4Msg
             //fill in header
-            USRange9Header.seq = 1; 				//uint32
+            // USRange9Header.seq = 1; 				//uint32
             USRange9Header.stamp = ros::Time::now(); 		//time
             USRange9Header.frame_id = "usrangesensor9";		//string
 
@@ -527,7 +527,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange9Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange9Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange9Msg.min_range = 0.1; 				//float32 [m]
-            USRange9Msg.max_range = 1.2; 				//float32 [m]
+            USRange9Msg.max_range = 2.5; 				//float32 [m]
             USRange9Msg.range = ((float)usBoard.sensor[8]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -542,7 +542,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange10Msg;
             //create USRanger10Msg
             //fill in header
-            USRange10Header.seq = 1; 				//uint32
+            // USRange10Header.seq = 1; 				//uint32
             USRange10Header.stamp = ros::Time::now(); 		//time
             USRange10Header.frame_id = "usrangesensor10";		//string
 
@@ -550,7 +550,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange10Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange10Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange10Msg.min_range = 0.1; 				//float32 [m]
-            USRange10Msg.max_range = 1.2; 				//float32 [m]
+            USRange10Msg.max_range = 2.5; 				//float32 [m]
             USRange10Msg.range = ((float)usBoard.sensor[9]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -565,7 +565,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange11Msg;
             //create USRanger11Msg
             //fill in header
-            USRange11Header.seq = 1; 				//uint32
+            // USRange11Header.seq = 1; 				//uint32
             USRange11Header.stamp = ros::Time::now(); 		//time
             USRange11Header.frame_id = "usrangesensor11";		//string
 
@@ -573,7 +573,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange11Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange11Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange11Msg.min_range = 0.1; 				//float32 [m]
-            USRange11Msg.max_range = 1.2; 				//float32 [m]
+            USRange11Msg.max_range = 2.5; 				//float32 [m]
             USRange11Msg.range = ((float)usBoard.sensor[10]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -588,7 +588,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange12Msg;
             //create USRanger12Msg
             //fill in header
-            USRange12Header.seq = 1; 				//uint32
+            // USRange12Header.seq = 1; 				//uint32
             USRange12Header.stamp = ros::Time::now(); 		//time
             USRange12Header.frame_id = "usrangesensor12";		//string
 
@@ -596,7 +596,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange12Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange12Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange12Msg.min_range = 0.1; 				//float32 [m]
-            USRange12Msg.max_range = 1.2; 				//float32 [m]
+            USRange12Msg.max_range = 2.5; 				//float32 [m]
             USRange12Msg.range = ((float)usBoard.sensor[11]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -611,7 +611,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange13Msg;
             //create USRanger11Msg
             //fill in header
-            USRange13Header.seq = 1; 				//uint32
+            // USRange13Header.seq = 1; 				//uint32
             USRange13Header.stamp = ros::Time::now(); 		//time
             USRange13Header.frame_id = "usrangesensor13";		//string
 
@@ -619,7 +619,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange13Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange13Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange13Msg.min_range = 0.1; 				//float32 [m]
-            USRange13Msg.max_range = 1.2; 				//float32 [m]
+            USRange13Msg.max_range = 2.5; 				//float32 [m]
             USRange13Msg.range = ((float)usBoard.sensor[12]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -634,7 +634,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange14Msg;
             //create USRanger14Msg
             //fill in header
-            USRange14Header.seq = 1; 				//uint32
+            // USRange14Header.seq = 1; 				//uint32
             USRange14Header.stamp = ros::Time::now(); 		//time
             USRange14Header.frame_id = "usrangesensor14";		//string
 
@@ -642,7 +642,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange14Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange14Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange14Msg.min_range = 0.1; 				//float32 [m]
-            USRange14Msg.max_range = 1.2; 				//float32 [m]
+            USRange14Msg.max_range = 2.5; 				//float32 [m]
             USRange14Msg.range = ((float)usBoard.sensor[13]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -657,7 +657,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange15Msg;
             //create USRanger15Msg
             //fill in header
-            USRange15Header.seq = 1; 				//uint32
+            // USRange15Header.seq = 1; 				//uint32
             USRange15Header.stamp = ros::Time::now(); 		//time
             USRange15Header.frame_id = "usrangesensor15";		//string
 
@@ -665,7 +665,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange15Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange15Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange15Msg.min_range = 0.1; 				//float32 [m]
-            USRange15Msg.max_range = 1.2; 				//float32 [m]
+            USRange15Msg.max_range = 2.5; 				//float32 [m]
             USRange15Msg.range = ((float)usBoard.sensor[14]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
@@ -680,7 +680,7 @@ void neo_usboard_node::PublishUSBoardData()
             sensor_msgs::Range USRange16Msg;
             //create USRanger16Msg
             //fill in header
-            USRange16Header.seq = 1; 				//uint32
+            // USRange16Header.seq = 1; 				//uint32
             USRange16Header.stamp = ros::Time::now(); 		//time
             USRange16Header.frame_id = "usrangesensor16";		//string
 
@@ -688,7 +688,7 @@ void neo_usboard_node::PublishUSBoardData()
             USRange16Msg.radiation_type = 0; 			//uint8   => Enum ULTRASOUND=0; INFRARED=1
             USRange16Msg.field_of_view = 1.05; 			//float32 [rad]
             USRange16Msg.min_range = 0.1; 				//float32 [m]
-            USRange16Msg.max_range = 1.2; 				//float32 [m]
+            USRange16Msg.max_range = 2.5; 				//float32 [m]
             USRange16Msg.range = ((float)usBoard.sensor[15]/100); 	//float32 [cm] => [m]
 
             //publish data for first USrange sensor
