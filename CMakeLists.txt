@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
   neo_msgs
 )
 
@@ -58,7 +59,3 @@ install(TARGETS ${PROJECT_NAME} SerialIO_USBoard
 #############
 ## Testing ##
 #############
-
-
-
-
